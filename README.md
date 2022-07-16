@@ -1,6 +1,6 @@
 # Webscraping - Portal Job Madagascar
 ## required
-This project is carried out using nodejs (puppeteer, javascript), JSON file github and github action for integration.
+This project is carried out using nodejs (puppeteer, javascript), JSON file, github and github action for integration.
 ```
 npm install puppeteer
 npm intall fs
