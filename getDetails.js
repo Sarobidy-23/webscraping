@@ -52,7 +52,7 @@ const detail = async (detailsOfJobs, listOfJobs) => {
     }   
         
   }
-    core.setOutput('joblist', detailsOfJobs);
+    core.setOutput('detaillist', detailsOfJobs);
     await browser.close();
 };
 
