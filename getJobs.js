@@ -9,6 +9,7 @@ const content = async (listOfJobs, numPage) => {
     const page = await browser.newPage();
     try {
         await page.goto(`https://www.portaljob-madagascar.com/emploi/liste/secteur/informatique-web/page/${numPage}`, {timeout: 0, waitUntil: 'networkidle2'});
+        await page.waitForNavigation()
             const jobs = await page.evaluate((listOfJobs)=>{
                 let elements = document.querySelectorAll('body > section.col2_max_min > div > div.max > article');
                 for ( let element of elements){
