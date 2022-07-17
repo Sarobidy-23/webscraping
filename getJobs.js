@@ -13,8 +13,8 @@ const content = async (listOfJobs, numPage) => {
                 let elements = document.querySelectorAll('body > section.col2_max_min > div > div.max > article');
                 for ( let element of elements){
                     let condition = "ok";
-                    for(let info of listOfJobs){
-                        if(info.poste.toString() == element.querySelector('h3').textContent.toString()){
+                    for(let i=0; i<30; i--){
+                        if(listOfJobs[i].poste.toString() == element.querySelector('h3').textContent.toString()){
                             condition = "no";
                             break;
                         };
