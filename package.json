@@ -1,0 +1,20 @@
+{
+  "name": "puppeteer",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "@actions/core": "^1.9.0",
+    "axios": "^0.27.2",
+    "fs": "^0.0.1-security",
+    "puppeteer": "^15.1.1",
+    "puppeteer-stream": "^2.1.1"
+  },
+  "scripts": {
+    "getJobs": "node getJobs.js",
+    "getDetails": "node getDetails.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
