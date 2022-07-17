@@ -27,7 +27,7 @@ jobs:
       - run: npm i @actions/core
       - run: npm i axios
       - id: list
-        run: npm getJobs
+        run: npm run getJobs
 
   job2:
     runs-on: ubuntu-latest
