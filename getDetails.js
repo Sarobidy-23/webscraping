@@ -52,17 +52,17 @@ const detail = async (detailsOfJobs, listOfJobs) => {
     }   
         
   }
-    core.setOutput('detaillist', detailsOfJobs);
+    core.setOutput('joblist', detailsOfJobs);
     await browser.close();
 };
 
-const promise = axios.get("https://raw.githubusercontent.com/Sarobidy-23/webscraping/main/informatique-web-details.json");
+const promise = axios.get("https://raw.githubusercontent.com/Sarobidy-23/webscraping/main/tourisme-voyage-details.json");
   promise
   .then((response) => {
     let result = JSON.stringify(response.data);
     let detailsOfJobs = JSON.parse(result);
     
-      const otherPromise = axios.get("https://raw.githubusercontent.com/Sarobidy-23/webscraping/main/informatique-web.json");
+      const otherPromise = axios.get("https://raw.githubusercontent.com/Sarobidy-23/webscraping/main/tourisme-voyage.json");
           otherPromise
          .then((response) => {
       
