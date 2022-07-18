@@ -1,0 +1,51 @@
+name: CI
+on: 
+  push:
+    branches:
+       - main
+  pull_request:
+     branches:
+       - main
+  schedule:
+    - cron: "* */3 * * *"
+jobs: 
+  job1:
+    runs-on: ubuntu-latest
+    # Map a step output to a jobDetails output
+    outputs:
+      output1: ${{ steps.list.outputs.joblist }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - name: Install Dependencies
+        uses: actions/checkout@v2.4.0
+        env:
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
+        with:
+         args: install
+      - run: npm i puppeteer
+      - run: npm i @actions/core
+      - run: npm i axios
+      - id: detailList
+        run: npm run getDetails
+
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
+    steps:
+      - uses: actions/checkout@master
+      - name: create-json
+        id: create-json
+        uses: jsdaniell/create-json@1.1.2
+        with:
+          name: "informatique-web-details.json"
+          json: ${{ needs.job1.outputs.output1 }}
+      - run: | 
+           git config --global user.email "hei.sarobidy.com" 
+           git config --global user.name "Sarobidy-23" 
+           git add . 
+           git add --force informatique-web-details.json 
+           git status 
+           git commit -a -m "add detailList"
+           git push
+      
