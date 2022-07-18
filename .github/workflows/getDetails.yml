@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     # Map a step output to a jobDetails output
     outputs:
-      output1: ${{ steps.list.outputs.joblist }}
+      output1: ${{ steps.detailList.outputs.joblist }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
