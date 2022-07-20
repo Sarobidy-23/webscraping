@@ -32,7 +32,7 @@ const detail = async (detailsOfJobs, listOfJobs) => {
          for(let details of item_detail){
            let det = details.textContent
            det = det.substring(25,).replaceAll(/ {1,}/g," ")
-           push.push(det);
+           push.unshift(det);
          }    
          detailTEMP = [{
                    poste : push[0],
