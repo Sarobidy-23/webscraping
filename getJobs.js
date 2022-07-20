@@ -21,7 +21,7 @@ const content = async (listOfJobs, numPage) => {
                     };
                     
                     if(condition == "ok"){
-                            listOfJobs.push({
+                            listOfJobs.unshift({
                                 poste : element.querySelector('h3').textContent ,
                                 societe : element.querySelector('h4').textContent,
                                 contrat : element.querySelector('h5').textContent,
