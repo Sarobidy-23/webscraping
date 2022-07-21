@@ -14,12 +14,12 @@ const content = async (listOfJobs, numPage) => {
                 let elements = document.querySelectorAll('body > section.col2_max_min > div > div.max > article');
                 for ( let element of elements){
                     let condition = "ok";
-                    page.waitFor(for(let i=0; i<20; i++ ){
+                    for(let i=0; i<20; i++ ){
                         if(listOfJobs[i].poste.toString() == element.querySelector('h3').textContent.toString()){
                             condition = "no";
                             break;
                         };
-                    };);
+                    };
                     
                     if(condition == "ok"){
                             listOfJobs.unshift({
